@@ -1,0 +1,537 @@
+using System;
+using System.Drawing;
+using System.Collections;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Data;
+
+using ShapeDotNet;
+
+namespace ExampleApplication
+{
+	/// <summary>
+	/// Summary description for Form1.
+	/// </summary>
+	public class Form1 : System.Windows.Forms.Form
+	{
+		private int queryField;
+		
+		private System.Windows.Forms.MainMenu mainMenu1;
+		private System.Windows.Forms.MenuItem menuItem1;
+		private System.Windows.Forms.MenuItem menuItem3;
+		private System.Windows.Forms.StatusBar statusBar1;
+		private System.Windows.Forms.StatusBarPanel statusBarPanel1;
+		private System.Windows.Forms.StatusBarPanel statusBarPanel2;
+		private System.Windows.Forms.StatusBarPanel statusBarPanel3;
+		private System.ComponentModel.IContainer components;
+		private System.Windows.Forms.MenuItem menuOpenFile;
+		private System.Windows.Forms.MenuItem menuExit;
+		private System.Windows.Forms.MenuItem menuHelp;
+		private System.Windows.Forms.MenuItem menuHelpAbout;
+
+		private System.Windows.Forms.ImageList imageList1;
+		private System.Windows.Forms.MenuItem menuItem6;
+		private System.Windows.Forms.MenuItem menuSaveViewTo;
+		private System.Windows.Forms.MenuItem menuItemSaveToImage;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Splitter splitter1;
+		private ShapeDotNet.MapControl mapControl;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ToolBar toolBar1;
+		private System.Windows.Forms.ToolBarButton pointerButton;
+		private System.Windows.Forms.ToolBarButton zoomButton;
+		private System.Windows.Forms.ToolBarButton zoomAreaButton;
+		private System.Windows.Forms.ToolBarButton dragButton;
+		private System.Windows.Forms.ToolBarButton centerButton;
+		private System.Windows.Forms.ToolBarButton queryButton;
+		private System.Windows.Forms.ToolBarButton extentsButton;
+		private System.Windows.Forms.ToolBarButton antiAliasButton;
+		private System.Windows.Forms.CheckedListBox layerListBox;
+
+		public Form1()
+		{
+			//
+			// Required for Windows Form Designer support
+			//
+			InitializeComponent();
+
+			//
+			// TODO: Add any constructor code after InitializeComponent call
+			//
+			mapControl.OnQueryResult += new QueryResultEventHandler( this.mapControl_QueryResult );
+		}
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		protected override void Dispose( bool disposing )
+		{
+			if( disposing )
+			{
+				if (components != null) 
+				{
+					components.Dispose();
+				}
+			}
+			base.Dispose( disposing );
+		}
+
+		#region Windows Form Designer generated code
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.components = new System.ComponentModel.Container();
+			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Form1));
+			this.mainMenu1 = new System.Windows.Forms.MainMenu();
+			this.menuItem1 = new System.Windows.Forms.MenuItem();
+			this.menuOpenFile = new System.Windows.Forms.MenuItem();
+			this.menuItem3 = new System.Windows.Forms.MenuItem();
+			this.menuSaveViewTo = new System.Windows.Forms.MenuItem();
+			this.menuItemSaveToImage = new System.Windows.Forms.MenuItem();
+			this.menuItem6 = new System.Windows.Forms.MenuItem();
+			this.menuExit = new System.Windows.Forms.MenuItem();
+			this.menuHelp = new System.Windows.Forms.MenuItem();
+			this.menuHelpAbout = new System.Windows.Forms.MenuItem();
+			this.statusBar1 = new System.Windows.Forms.StatusBar();
+			this.statusBarPanel1 = new System.Windows.Forms.StatusBarPanel();
+			this.statusBarPanel2 = new System.Windows.Forms.StatusBarPanel();
+			this.statusBarPanel3 = new System.Windows.Forms.StatusBarPanel();
+			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.layerListBox = new System.Windows.Forms.CheckedListBox();
+			this.toolBar1 = new System.Windows.Forms.ToolBar();
+			this.pointerButton = new System.Windows.Forms.ToolBarButton();
+			this.zoomButton = new System.Windows.Forms.ToolBarButton();
+			this.zoomAreaButton = new System.Windows.Forms.ToolBarButton();
+			this.dragButton = new System.Windows.Forms.ToolBarButton();
+			this.centerButton = new System.Windows.Forms.ToolBarButton();
+			this.queryButton = new System.Windows.Forms.ToolBarButton();
+			this.extentsButton = new System.Windows.Forms.ToolBarButton();
+			this.antiAliasButton = new System.Windows.Forms.ToolBarButton();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.splitter1 = new System.Windows.Forms.Splitter();
+			this.mapControl = new ShapeDotNet.MapControl();
+			((System.ComponentModel.ISupportInitialize)(this.statusBarPanel1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.statusBarPanel2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.statusBarPanel3)).BeginInit();
+			this.panel1.SuspendLayout();
+			this.groupBox2.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// mainMenu1
+			// 
+			this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+						this.menuItem1,
+						this.menuHelp});
+			// 
+			// menuItem1
+			// 
+			this.menuItem1.Index = 0;
+			this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+						this.menuOpenFile,
+						this.menuItem3,
+						this.menuSaveViewTo,
+						this.menuItem6,
+						this.menuExit});
+			this.menuItem1.Text = "&File";
+			// 
+			// menuOpenFile
+			// 
+			this.menuOpenFile.Index = 0;
+			this.menuOpenFile.Text = "&Open Shape File";
+			this.menuOpenFile.Click += new System.EventHandler(this.menuOpenFile_Click);
+			// 
+			// menuItem3
+			// 
+			this.menuItem3.Index = 1;
+			this.menuItem3.Text = "-";
+			// 
+			// menuSaveViewTo
+			// 
+			this.menuSaveViewTo.Index = 2;
+			this.menuSaveViewTo.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+						this.menuItemSaveToImage});
+			this.menuSaveViewTo.Text = "&Save View As...";
+			// 
+			// menuItemSaveToImage
+			// 
+			this.menuItemSaveToImage.Index = 0;
+			this.menuItemSaveToImage.Text = "Image";
+			this.menuItemSaveToImage.Click += new System.EventHandler(this.menuItemSaveToImage_Click);
+			// 
+			// menuItem6
+			// 
+			this.menuItem6.Index = 3;
+			this.menuItem6.Text = "-";
+			// 
+			// menuExit
+			// 
+			this.menuExit.Index = 4;
+			this.menuExit.Text = "E&xit";
+			this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
+			// 
+			// menuHelp
+			// 
+			this.menuHelp.Index = 1;
+			this.menuHelp.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+						this.menuHelpAbout});
+			this.menuHelp.Text = "&Help";
+			// 
+			// menuHelpAbout
+			// 
+			this.menuHelpAbout.Index = 0;
+			this.menuHelpAbout.Text = "&About";
+			this.menuHelpAbout.Click += new System.EventHandler(this.menuHelpAbout_Click);
+			// 
+			// statusBar1
+			// 
+			this.statusBar1.Location = new System.Drawing.Point(0, 324);
+			this.statusBar1.Name = "statusBar1";
+			this.statusBar1.Panels.AddRange(new System.Windows.Forms.StatusBarPanel[] {
+						this.statusBarPanel1,
+						this.statusBarPanel2,
+						this.statusBarPanel3});
+			this.statusBar1.ShowPanels = true;
+			this.statusBar1.Size = new System.Drawing.Size(496, 24);
+			this.statusBar1.TabIndex = 2;
+			// 
+			// statusBarPanel1
+			// 
+			this.statusBarPanel1.Alignment = System.Windows.Forms.HorizontalAlignment.Center;
+			this.statusBarPanel1.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Contents;
+			this.statusBarPanel1.MinWidth = 200;
+			this.statusBarPanel1.Width = 200;
+			// 
+			// statusBarPanel2
+			// 
+			this.statusBarPanel2.Alignment = System.Windows.Forms.HorizontalAlignment.Center;
+			this.statusBarPanel2.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Contents;
+			this.statusBarPanel2.MinWidth = 150;
+			this.statusBarPanel2.Width = 150;
+			// 
+			// statusBarPanel3
+			// 
+			this.statusBarPanel3.Alignment = System.Windows.Forms.HorizontalAlignment.Right;
+			this.statusBarPanel3.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring;
+			this.statusBarPanel3.MinWidth = 60;
+			this.statusBarPanel3.Width = 130;
+			// 
+			// imageList1
+			// 
+			this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+			this.imageList1.TransparentColor = System.Drawing.Color.White;
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.layerListBox);
+			this.panel1.Controls.Add(this.toolBar1);
+			this.panel1.Controls.Add(this.groupBox2);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel1.DockPadding.All = 3;
+			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(144, 324);
+			this.panel1.TabIndex = 5;
+			// 
+			// layerListBox
+			// 
+			this.layerListBox.Dock = System.Windows.Forms.DockStyle.Top;
+			this.layerListBox.Location = new System.Drawing.Point(3, 53);
+			this.layerListBox.Name = "layerListBox";
+			this.layerListBox.ScrollAlwaysVisible = true;
+			this.layerListBox.Size = new System.Drawing.Size(138, 109);
+			this.layerListBox.TabIndex = 4;
+			// 
+			// toolBar1
+			// 
+			this.toolBar1.Appearance = System.Windows.Forms.ToolBarAppearance.Flat;
+			this.toolBar1.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
+						this.pointerButton,
+						this.zoomButton,
+						this.zoomAreaButton,
+						this.dragButton,
+						this.centerButton,
+						this.queryButton,
+						this.extentsButton,
+						this.antiAliasButton});
+			this.toolBar1.ButtonSize = new System.Drawing.Size(23, 22);
+			this.toolBar1.DropDownArrows = true;
+			this.toolBar1.ImageList = this.imageList1;
+			this.toolBar1.Location = new System.Drawing.Point(3, 3);
+			this.toolBar1.Name = "toolBar1";
+			this.toolBar1.ShowToolTips = true;
+			this.toolBar1.Size = new System.Drawing.Size(138, 50);
+			this.toolBar1.TabIndex = 3;
+			this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
+			// 
+			// pointerButton
+			// 
+			this.pointerButton.ImageIndex = 0;
+			this.pointerButton.Pushed = true;
+			this.pointerButton.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton;
+			this.pointerButton.ToolTipText = "Select";
+			// 
+			// zoomButton
+			// 
+			this.zoomButton.ImageIndex = 1;
+			this.zoomButton.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton;
+			this.zoomButton.ToolTipText = "Zoom In/Out";
+			// 
+			// zoomAreaButton
+			// 
+			this.zoomAreaButton.ImageIndex = 2;
+			this.zoomAreaButton.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton;
+			this.zoomAreaButton.ToolTipText = "Zoom Area";
+			// 
+			// dragButton
+			// 
+			this.dragButton.ImageIndex = 3;
+			this.dragButton.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton;
+			this.dragButton.ToolTipText = "Drag";
+			// 
+			// centerButton
+			// 
+			this.centerButton.ImageIndex = 4;
+			this.centerButton.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton;
+			this.centerButton.ToolTipText = "Center On Click";
+			// 
+			// queryButton
+			// 
+			this.queryButton.ImageIndex = 5;
+			this.queryButton.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton;
+			this.queryButton.ToolTipText = "Query";
+			// 
+			// extentsButton
+			// 
+			this.extentsButton.ImageIndex = 6;
+			this.extentsButton.ToolTipText = "Zoom To Extents";
+			// 
+			// antiAliasButton
+			// 
+			this.antiAliasButton.ImageIndex = 9;
+			this.antiAliasButton.Style = System.Windows.Forms.ToolBarButtonStyle.ToggleButton;
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.comboBox1);
+			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.groupBox2.Location = new System.Drawing.Point(3, 281);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(138, 40);
+			this.groupBox2.TabIndex = 0;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Query";
+			// 
+			// comboBox1
+			// 
+			this.comboBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.comboBox1.Location = new System.Drawing.Point(3, 16);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(132, 21);
+			this.comboBox1.TabIndex = 6;
+			this.comboBox1.Text = "Query Source Field";
+			// 
+			// splitter1
+			// 
+			this.splitter1.Location = new System.Drawing.Point(144, 0);
+			this.splitter1.Name = "splitter1";
+			this.splitter1.Size = new System.Drawing.Size(4, 324);
+			this.splitter1.TabIndex = 6;
+			this.splitter1.TabStop = false;
+			// 
+			// mapControl
+			// 
+			this.mapControl.BackColor = System.Drawing.Color.RoyalBlue;
+			this.mapControl.Cursor = System.Windows.Forms.Cursors.Default;
+			this.mapControl.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.mapControl.Location = new System.Drawing.Point(148, 0);
+			this.mapControl.Name = "mapControl";
+			this.mapControl.PointerBehavior = ShapeDotNet.PointerMode.Select;
+			this.mapControl.Size = new System.Drawing.Size(348, 324);
+			this.mapControl.TabIndex = 7;
+			this.mapControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mapControl_MouseMove);
+			// 
+			// Form1
+			// 
+			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+			this.ClientSize = new System.Drawing.Size(496, 348);
+			this.Controls.Add(this.mapControl);
+			this.Controls.Add(this.splitter1);
+			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.statusBar1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Menu = this.mainMenu1;
+			this.Name = "Form1";
+			this.Text = "GIS.Net";
+			this.Resize += new System.EventHandler(this.Form1_Resize);
+			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mapControl_MouseMove);
+			((System.ComponentModel.ISupportInitialize)(this.statusBarPanel1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.statusBarPanel2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.statusBarPanel3)).EndInit();
+			this.panel1.ResumeLayout(false);
+			this.groupBox2.ResumeLayout(false);
+			this.ResumeLayout(false);
+		}
+		#endregion
+
+		/// <summary>
+		/// The main entry point for the application.
+		/// </summary>
+		[STAThread]
+		static void Main() 
+		{
+			Application.Run( new Form1() );
+		}
+
+		public void Draw()
+		{
+			mapControl.Draw();
+		}
+
+		private void toolBar1_ButtonClick(object sender, System.Windows.Forms.ToolBarButtonClickEventArgs e)
+		{
+			switch(toolBar1.Buttons.IndexOf(e.Button))
+			{
+				case 0: //Pointer - no action
+					toolBar1.Buttons[0].Pushed = true;
+					toolBar1.Buttons[1].Pushed = false;
+					toolBar1.Buttons[2].Pushed = false;
+					toolBar1.Buttons[3].Pushed = false;
+					toolBar1.Buttons[4].Pushed = false;
+					toolBar1.Buttons[5].Pushed = false;
+					mapControl.PointerBehavior = ShapeDotNet.PointerMode.Select;
+					break;
+
+				case 1: //Pointer - zoom
+					toolBar1.Buttons[0].Pushed = false;
+					toolBar1.Buttons[1].Pushed = true;
+					toolBar1.Buttons[2].Pushed = false;
+					toolBar1.Buttons[3].Pushed = false;
+					toolBar1.Buttons[4].Pushed = false;
+					toolBar1.Buttons[5].Pushed = false;
+					mapControl.PointerBehavior = ShapeDotNet.PointerMode.Zoom;
+					break;
+
+				case 2: //Pointer - zoom area
+					toolBar1.Buttons[0].Pushed = false;
+					toolBar1.Buttons[1].Pushed = false;
+					toolBar1.Buttons[2].Pushed = true;
+					toolBar1.Buttons[3].Pushed = false;
+					toolBar1.Buttons[4].Pushed = false;
+					toolBar1.Buttons[5].Pushed = false;
+					mapControl.PointerBehavior = ShapeDotNet.PointerMode.ZoomArea;
+					break;
+
+				case 3: //Pointer - drag
+					toolBar1.Buttons[0].Pushed = false;
+					toolBar1.Buttons[1].Pushed = false;
+					toolBar1.Buttons[2].Pushed = false;
+					toolBar1.Buttons[3].Pushed = true;
+					toolBar1.Buttons[4].Pushed = false;
+					toolBar1.Buttons[5].Pushed = false;
+					mapControl.PointerBehavior = ShapeDotNet.PointerMode.Drag;
+					break;
+
+				case 4: //Pointer - center
+					toolBar1.Buttons[0].Pushed = false;
+					toolBar1.Buttons[1].Pushed = false;
+					toolBar1.Buttons[2].Pushed = false;
+					toolBar1.Buttons[3].Pushed = false;
+					toolBar1.Buttons[4].Pushed = true;
+					toolBar1.Buttons[5].Pushed = false;
+					mapControl.PointerBehavior = ShapeDotNet.PointerMode.Center;
+					break;
+
+				case 5: //Pointer - query
+					toolBar1.Buttons[0].Pushed = false;
+					toolBar1.Buttons[1].Pushed = false;
+					toolBar1.Buttons[2].Pushed = false;
+					toolBar1.Buttons[3].Pushed = false;
+					toolBar1.Buttons[4].Pushed = false;
+					toolBar1.Buttons[5].Pushed = true;
+					mapControl.PointerBehavior = ShapeDotNet.PointerMode.Query;
+					break;
+
+				case 6: // Zoom to Extents
+					mapControl.ZoomToExtents();
+					break;
+
+				case 7: // AntiAlias toggle
+					//mapControl.AntiAlias = !mapControl.AntiAlias;
+					Draw();
+					break;
+			}
+	
+		}
+
+		private void Form1_Resize(object sender, System.EventArgs e)
+		{
+//			if ( this.WindowState != FormWindowState.Minimized )
+//			{
+//				mapControl.Width = this.Width - 8;
+//				mapControl.Height = this.Height - 105;
+//			}		
+		}
+
+		private void menuOpenFile_Click(object sender, System.EventArgs e)
+		{			
+			mapControl.OpenFile();
+
+			comboBox1.Items.Clear();
+			
+			string seperator = "\\";
+			char[] delimiter = seperator.ToCharArray() ;
+			layerListBox.Items.Clear();
+
+			foreach ( string s in mapControl.GetLayerNames() )
+			{
+				string[] ss = s.Split( delimiter, 100 );
+				layerListBox.Items.Insert( 0, ss[ ss.Length - 1] );
+			}
+		}
+
+		private void menuHelpAbout_Click(object sender, System.EventArgs e)
+		{
+			string msg = "A small ESRI Shapefile Viewer built with\n";
+			msg += mapControl.ProductName + " v" + mapControl.ProductVersion + "\n\n";
+			msg += "(c)2002-2003 John Coleman <john@k5jvc.com>";
+			
+			MessageBox.Show(msg , "About Gis.Net...");
+		}
+
+		private void menuExit_Click(object sender, System.EventArgs e)
+		{
+			Application.Exit();
+		}
+
+		private void mapControl_MouseMove( object sender, System.Windows.Forms.MouseEventArgs e )
+		{
+			statusBar1.Panels[1].Text = mapControl.MouseGeoX.ToString("F6") + " x " + 
+										mapControl.MouseGeoY.ToString("F6");
+		}
+
+		private void mapControl_QueryResult( object sender, string[] result )
+		{
+			if ( result != null && queryField < result.Length )
+			{
+				statusBar1.Panels[0].Text = result[ queryField ].Trim();
+			}
+		}
+
+		private void comboBox1_SelectionChangeCommitted(object sender, System.EventArgs e)
+		{
+			queryField = comboBox1.SelectedIndex;
+		}
+
+		private void menuItemSaveToImage_Click(object sender, System.EventArgs e)
+		{
+			mapControl.SaveViewToImage();
+		}
+	}
+}

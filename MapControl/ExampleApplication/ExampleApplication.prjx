@@ -1,0 +1,44 @@
+<Project name="ExampleApplication" description="" newfilesearch="None" enableviewstate="True" version="1.1" projecttype="C#">
+  <Contents>
+    <File name=".\AssemblyInfo.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Form1.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Form1.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\PropertiesForm.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\icons\ZoomArea.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\AddLayer.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\AntiAlias.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\BrushSettings.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\Center.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\Drag.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\Extents.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\LayerDown.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\LayerUp.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\PenSettings.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\Query.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\RemoveLayer.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\Select.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\icons\Zoom.bmp" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+  </Contents>
+  <References>
+    <Reference type="Project" refto="MapControl" localcopy="True" />
+    <Reference type="Project" refto="GIS" localcopy="True" />
+  </References>
+  <DeploymentInformation target="" script="" strategy="File" />
+  <Configuration runwithwarnings="False" name="Debug">
+    <CodeGeneration runtime="MsNet" compiler="Csc" warninglevel="4" includedebuginformation="True" optimize="False" unsafecodeallowed="False" generateoverflowchecks="False" mainclass="" target="WinExe" definesymbols="DEBUG;TRACE" generatexmldocumentation="False" win32Icon=".\" />
+    <Execution commandlineparameters="" consolepause="True" />
+    <Output directory=".\Debug\" assembly="ExampleApplication" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+  </Configuration>
+  <Configurations active="Debug">
+    <Configuration runwithwarnings="False" name="Debug">
+      <CodeGeneration runtime="MsNet" compiler="Csc" warninglevel="4" includedebuginformation="True" optimize="False" unsafecodeallowed="False" generateoverflowchecks="False" mainclass="" target="WinExe" definesymbols="DEBUG;TRACE" generatexmldocumentation="False" win32Icon=".\" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory=".\Debug\" assembly="ExampleApplication" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+    </Configuration>
+    <Configuration runwithwarnings="False" name="Release">
+      <CodeGeneration runtime="MsNet" compiler="Csc" warninglevel="4" includedebuginformation="False" optimize="True" unsafecodeallowed="False" generateoverflowchecks="False" mainclass="" target="WinExe" definesymbols="TRACE" generatexmldocumentation="False" win32Icon=".\" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory=".\Release\" assembly="ExampleApplication" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+    </Configuration>
+  </Configurations>
+</Project>

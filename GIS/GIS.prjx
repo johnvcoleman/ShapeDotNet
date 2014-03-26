@@ -1,0 +1,36 @@
+<Project name="GIS" description="" newfilesearch="None" enableviewstate="True" version="1.1" projecttype="C#">
+  <Contents>
+    <File name=".\AssemblyInfo.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GIS.VectorFeature.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GIS.IMapLayer.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GIS.Map.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GIS.MapMetrics.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GIS.PointD.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GIS.RectangleD.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GIS.ScaleBar.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\DbaseReader\GIS.DbaseReader.DbaseIndex.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\DbaseReader\GIS.DbaseReader.Dbase.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ShapefileReader\GIS.ShapefileReader.ShapeIndex.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ShapefileReader\GIS.ShapefileReader.RenderThread.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ShapefileReader\GIS.ShapefileReader.Shapefile.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+  </Contents>
+  <References />
+  <DeploymentInformation target="" script="" strategy="File" />
+  <Configuration runwithwarnings="False" name="Debug">
+    <CodeGeneration runtime="MsNet" compiler="Csc" warninglevel="4" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Library" definesymbols="" generatexmldocumentation="False" win32Icon="" />
+    <Execution commandlineparameters="" consolepause="False" />
+    <Output directory=".\bin\Debug" assembly="GIS" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+  </Configuration>
+  <Configurations active="Debug">
+    <Configuration runwithwarnings="False" name="Debug">
+      <CodeGeneration runtime="MsNet" compiler="Csc" warninglevel="4" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Library" definesymbols="" generatexmldocumentation="False" win32Icon="" />
+      <Execution commandlineparameters="" consolepause="False" />
+      <Output directory=".\bin\Debug" assembly="GIS" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+    </Configuration>
+    <Configuration runwithwarnings="False" name="Release">
+      <CodeGeneration runtime="MsNet" compiler="Csc" warninglevel="4" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Library" definesymbols="" generatexmldocumentation="False" win32Icon="" />
+      <Execution commandlineparameters="" consolepause="False" />
+      <Output directory=".\bin\Release" assembly="GIS" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+    </Configuration>
+  </Configurations>
+</Project>

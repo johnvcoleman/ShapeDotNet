@@ -1,0 +1,6 @@
+Coding:
+John Coleman <k5jvc at netscape.net>
+
+Testing:
+Erwin Perik <erwin at perik.nu>
+Ryan Rife <rifer at pwt.com>

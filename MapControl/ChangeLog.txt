@@ -1,0 +1,81 @@
+* v1.0.0-BETA 2 - 9 Feb 04
+1.  Don't move viewport on layer add or remove. (Erwin)
+2.  Allow feature labels to be shown without showing the feature itself. (Erwin)
+3.  .dbf locking problem is fixed. (finally, right?) (Erwin & Ryan)
+4.  Added LayerName property to the IMapLayer interface. (Ryan)
+5.  MapCanvas property is now public in the MapControl (Erwin)
+6.  Added a public property to the MapControl that accesses the underlying 
+GIS.Map object of the control. (Erwin)
+7.  Handle insertion of a layer properly (Ryan)
+8.  Made significant changes to Map.CalculateExtents() as a result of #1 and #7.
+9.  Made significant changes to the MapControl properties as a result of #6.
+10.  Made the MapMetrics object public. (Ryan)
+
+Thanks go to Ryan and Erwin for all the good feedback.  I anticipate there being 
+one more beta release after this one that will deal almost entirely with improving
+the query facilities. Please note that my email address has changed, and the 
+k5jvc.com domain has been parked temporarily.
+
+* v1.0.0-BETA 1 - 8 Jan 04
+Fixed improper redraw on query.  Fixed inoperative query for point type Shapfiles.
+Moved the method that calculates the distance from a point to a feature from the 
+RectangleD class to the VectorFeature class.  Added in some requested overloaded 
+methods for the Map constructor and AddFile.  Added some sample Shapefiles to the 
+installer and updated the docs.  This is the first BETA release in preparation for
+v1.0.
+
+* v0.9.1 - 3 Jan 04
+Fixed a bug that was causing SDN to crash on reading large polygon Shapefiles the 
+first time.  Fixed some typos.
+
+v0.9.0 - 24 Dec 03
+Added in options to control the background of the labels and to outline the
+background with the label forecolor.  Did some more fine tuning on the placement
+of labels.  Fixed the polygon rendering to more closely match the behavior that's
+called for in the Shapefile spec.  As a result, overlapping polygons should now be 
+drawn correctly (XOR).  Cautiously added the query code back in.  Still not working
+the way I think it should, but it needs to be released so folks can "kick the tires."
+Reorganized the ShapeDotNet namespace a bit so that it encompasses the GIS 
+project now.  *LOTS* of API documentation!  Every method in the MapControl and GIS 
+namespace should now have a description and usage info.  The documentation is 
+included with the binary distribution, source distribution, and also on my 
+website: http://www.k5jvc.com/sdn.  Polished up the installer a bit too.
+Merry Christmas!
+
+* v0.8.5 - 17 Sep 03
+Labels on polyline type shapefiles are now rotated to match the polyline. Added 
+in label collision detection for all shape types so that the labels won't overlap 
+each other(only works 95% of the time). Added in opacity control for the individual layers and seperately for 
+the labels. 
+
+* v0.8.0 - 03 Sep 03
+Added in label support for all layer types.  Updated the example app property
+box to handle the label settings.  The labels on polylines still need some work
+to get the placement just right.  Fixed crash on minimize.  Changed the behavior 
+of the zoom area tool.  Query is still broken as is the antialiasing. ( Deja Vu )
+
+* v0.7.5 - 21 Aug 03
+Major reorganization of the GIS namespace and a partial rewrite.  The rewrite 
+was to make it a little more friendly for the compact framework.  The threading 
+went went through a bit of an overhaul as a result of the changes for the CF.  
+Added in layer support and property control for each layer.  Reworked the GUI
+in the example app to utilize the layering abilities of SDN.  Query is still 
+broken as is the antialiasing.
+
+* v0.7.0 - 13 Jun 03
+Fixed exception being thrown when querying after a new shp is loaded 
+(bounds checking).  Performance improvement that was suppose to be in 
+the last version didn't materialize because of some locking issues
+between threads.  Fixed.  Each thread now has its own GraphicsPath object
+to draw to.  Saw a 46% improvement in rendering speed on my box as a result
+(YMMV).  Added in the ability to save the current view to a bitmap image.
+Added in a display of the rendering speed (upper left corner of the control).
+Created some new icons for the app/control.  *MORE* aspect checking fixes.
+
+* v0.6.5 - 6 June 03
+Lots of changes in the rendering code.  Everything is (should be) thread 
+friendly now.  There should be a noticable bump in performance on SMP machines
+of 25-33%.  Each drawing operation gets broken down into two threads where each
+thread has exactly half of the DrawList to draw.
+
+Added in a toggle for turning the antialiasing on/off.
